@@ -27,10 +27,7 @@ async def main():
     logger.error("Starting bot")
     config = load_config("bot.ini")
 
-    if config.tg_bot.use_redis:
-        storage = RedisStorage()
-    else:
-        storage = MemoryStorage()
+    storage = RedisStorage() if config.tg_bot.use_redis else MemoryStorage()
     pool = await create_pool(
         user=config.db.user,
         password=config.db.password,
