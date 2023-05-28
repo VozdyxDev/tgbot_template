@@ -19,7 +19,7 @@ def create_pool(user, password, database, host, echo):
     raise NotImplementedError  # TODO check your db connector
 
 
-async def main():
+async def run():
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
@@ -55,13 +55,13 @@ async def main():
         await bot.session.close()
 
 
-def cli():
+def main():
     """Wrapper for command line"""
     try:
-        asyncio.run(main())
+        asyncio.run(run())
     except (KeyboardInterrupt, SystemExit):
         logger.error("Bot stopped!")
 
 
 if __name__ == '__main__':
-    cli()
+    main()

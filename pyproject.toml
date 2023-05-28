@@ -1,18 +1,9 @@
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
-
-[tool.setuptools]
-package-dir = { "" = "bot" }
-
 [project]
 name = "TelegramBot"
-version = "0.0.1"
-authors = [
-    { name = "Vozdyx", email = "vozdyx.dev@gmail.com" },
-]
+version = "1.0.0"
+authors = [{ name = "Vozdyx", email = "vozdyx.dev@gmail.com" }]
 description = "Telegram bot example package"
-requires-python = ">=3.7"
+requires-python = ">=3.10"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
@@ -36,4 +27,4 @@ lint = [
 "Bug Tracker" = "https://github.com/Unicorn-Software/TelegramBot/issues"
 
 [project.scripts]
-bot = "cli:cli"
+bot = "main:main"
