@@ -2,8 +2,8 @@ from aiogram import Dispatcher
 from aiogram.dispatcher import FSMContext
 from aiogram.types import Message
 
-from tgbot.services.repository import Repo
-from tgbot.states.user import UserMain
+from ..services.repository import Repo
+from ..states.user import UserMain
 
 
 async def user_start(m: Message, repo: Repo, state: FSMContext):

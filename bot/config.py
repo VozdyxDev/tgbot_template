@@ -3,7 +3,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class DbConfig:
+class DBConfig:
     host: str
     password: str
     user: str
@@ -11,7 +11,7 @@ class DbConfig:
 
 
 @dataclass
-class TgBot:
+class BotConfig:
     token: str
     admin_id: int
     use_redis: bool
@@ -19,21 +19,21 @@ class TgBot:
 
 @dataclass
 class Config:
-    tg_bot: TgBot
-    db: DbConfig
+    bot: BotConfig
+    db: DBConfig
 
 
 def load_config(path: str):
     config = configparser.ConfigParser()
     config.read(path)
 
-    tg_bot = config["tg_bot"]
+    bot = config["bot"]
 
     return Config(
-        tg_bot=TgBot(
-            token=tg_bot.get("token"),
-            admin_id=tg_bot.getint("admin_id"),
-            use_redis=tg_bot.getboolean("use_redis"),
+        bot=BotConfig(
+            token=bot.get("token"),
+            admin_id=bot.getint("admin_id"),
+            use_redis=bot.getboolean("use_redis"),
         ),
-        db=DbConfig(**config["db"]),
+        db=DBConfig(**config["db"]),
     )

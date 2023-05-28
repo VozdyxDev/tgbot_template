@@ -31,7 +31,7 @@ pip install -e .[test,lint]
 5. Start bot to check
 
 ```shell
-tgbot
+bot
 ```
 
 6. Edit systemd service file and copy it to a proper location

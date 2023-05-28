@@ -1,7 +1,7 @@
 from aiogram import Dispatcher
 from aiogram.types import Message
 
-from tgbot.models.role import UserRole
+from ..models.role import UserRole
 
 
 async def admin_start(m: Message):

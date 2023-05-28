@@ -1,4 +1,4 @@
-[tg_bot]
+[bot]
 token =
 admin_id =
 use_redis = true

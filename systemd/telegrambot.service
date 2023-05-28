@@ -1,13 +1,13 @@
 [Unit]
-Description=Course Bot
+Description=Telegram Bot
 After=network.target
 
 [Service]
-User=tgbot
-Group=tgbot
+User=telegrambot
+Group=telegrambot
 Type=simple
 WorkingDirectory=/opt/tgbot
-ExecStart=/opt/tgbot/venv/bin/tgbot
+ExecStart=/opt/telegrambot
 Restart=always
 
 [Install]

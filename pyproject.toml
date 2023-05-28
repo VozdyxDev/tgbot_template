@@ -3,13 +3,13 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-package-dir = { "" = "src" }
+package-dir = { "" = "bot" }
 
 [project]
-name = "tgbot"
+name = "TelegramBot"
 version = "0.0.1"
 authors = [
-    { name = "Authorname", email = "email@domain.whatever" },
+    { name = "Vozdyx", email = "vozdyx.dev@gmail.com" },
 ]
 description = "Telegram bot example package"
 requires-python = ">=3.7"
@@ -32,8 +32,8 @@ lint = [
 
 
 [project.urls]
-"Homepage" = "https://github.com/tishka17/tgbot_template"
-"Bug Tracker" = "https://github.com/tishka17/tgbot_template/issues"
+"Homepage" = "https://github.com/Unicorn-Software/TelegramBot"
+"Bug Tracker" = "https://github.com/Unicorn-Software/TelegramBot/issues"
 
 [project.scripts]
-tgbot = "tgbot.cli:cli"
+bot = "cli:cli"
