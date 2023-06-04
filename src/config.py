@@ -1,4 +1,4 @@
-import configparser
+from configparser import ConfigParser
 from dataclasses import dataclass
 
 
@@ -7,7 +7,7 @@ class DBConfig:
     host: str
     password: str
     user: str
-    database: str
+    port: int
 
 
 @dataclass
@@ -22,18 +22,12 @@ class Config:
     bot: BotConfig
     db: DBConfig
 
-
-def load_config(path: str):
-    config = configparser.ConfigParser()
-    config.read(path)
-
-    bot = config["bot"]
-
-    return Config(
-        bot=BotConfig(
+    def __init__(self, config: ConfigParser):
+        bot = config["bot"]
+        db = config["db"]
+        self.bot = BotConfig(
             token=bot.get("token"),
             admin_id=bot.getint("admin_id"),
-            use_redis=bot.getboolean("use_redis"),
-        ),
-        db=DBConfig(**config["db"]),
-    )
+            use_redis=bot.getboolean("use_redis")
+        )
+        self.db = DBConfig(**db)

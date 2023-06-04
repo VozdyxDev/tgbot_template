@@ -14,7 +14,7 @@ class RoleMiddleware(LifetimeControllerMiddleware):
         if not getattr(obj, "from_user", None):
             data["role"] = None
         elif obj.from_user.id == self.admin_id:
-            data["role"] = UserRole.ADMIN
+            data["role"] = UserRole.BOT_ADMIN
         else:
             data["role"] = UserRole.USER
 

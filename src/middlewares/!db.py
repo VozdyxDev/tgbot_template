@@ -21,3 +21,6 @@ class DbMiddleware(LifetimeControllerMiddleware):
             # check the documentation of your pool implementation
             # for proper way of releasing connection
             await self.pool.release(db)
+
+def setup(dp):
+    dp.add_mw(DbMiddleware)

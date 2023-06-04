@@ -2,5 +2,6 @@ from enum import Enum
 
 
 class UserRole(Enum):
-    ADMIN = "admin"
+    BOT_ADMIN = "bot_admin"
+    CHAT_ADMIN = "chat_admin"
     USER = "user"
